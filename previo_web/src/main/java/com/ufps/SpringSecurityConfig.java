@@ -23,11 +23,10 @@ public class SpringSecurityConfig {
 	
 	protected void configure(HttpSecurity http) throws Exception {
 		// TODO Auto-generated method stub
-		http.authorizeRequests().antMatchers("/", "/css/**" ,"/js/**" ,"/bootstrap/**" , "/plugins/**" ,"/scss/**",
-				"/forgot_password","/reset_password**").permitAll()
+		http.authorizeRequests().antMatchers("/", "/css/**" ,"/js/**").permitAll()
 		.anyRequest().authenticated()
 		.and()
-			.formLogin().loginPage("/login").permitAll()
+			.formLogin().loginPage("/inicio").permitAll()
 		.and().logout().permitAll();
 	}
 	
